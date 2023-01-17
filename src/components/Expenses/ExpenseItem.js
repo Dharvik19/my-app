@@ -8,9 +8,15 @@ function ExpenseItem(props){
     // const expenseTitle='Car insurance';
     // const expenseAmount = 256;
     const LocationOfExpenditure =  window.location.hostname;
-   
+   const EditHandler =()=>{
+    console.log('Edited');
+   }
+   const DeleteHandler=()=>{
+    console.log('Deleted')
+   }
     return (
         <>
+
         {/* <h2>Expense Item!!</h2> */}
         <Card className="expense-item">
             <ExpenseDate date={props.date}></ExpenseDate>
@@ -19,6 +25,8 @@ function ExpenseItem(props){
                 <ExpenseDetails title={props.title}></ExpenseDetails>
                 <div className="expense-item__price">${props.amount}</div>
             </div>
+            <button onClick={EditHandler}>Change</button>
+            <button onClick={DeleteHandler}>Delete</button>
         </Card>
         </>
         
